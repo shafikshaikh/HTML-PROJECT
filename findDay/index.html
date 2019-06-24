@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DateTime</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<section>
+		<div id="contener">
+			<div class="containt">
+				<form name="DOB">
+				
+					<input type="text" value="" name="user" id="user" placeholder="Enter Date Of Birth">
+					<br/>
+					<input type="submit" name="btn" value="Result" onclick="datetime()" class="button">
+					<br/>
+					<div class="resultbox">
+					<p id="Result"></p>
+				   </div>
+					
+
+				</form>	
+		    </div>
+		</div>	
+	
+
+
+	</section>
+
+
+	<script type="text/javascript">
+        function datetime()
+        {
+        var data=document.getElementById('user').value;
+        var dt=new Date(data);
+        var day=dt.getDay();
+        document.getElementById('Result').innerHTML=week(day);
+
+        }
+        function week(d)
+		{
+			var arry=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+			return arry[d];
+
+		}
+
+
+	</script>
+</body>
+</html>
